@@ -1,0 +1,8 @@
+.footer {
+    max-width: 318px;
+    display: flex;
+    align-self: flex-start;
+    padding: 67px 0 60px 0;
+    margin: 0 auto;
+    color: #faf8f8;
+}
