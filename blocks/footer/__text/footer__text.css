@@ -1,4 +1,5 @@
-.footer__text.css {
+.footer__text {
+    /* max-width: 880px; */
     margin: 0 auto 0 0;
     font-family: Inter;
     font-style: normal;
@@ -7,3 +8,10 @@
     line-height: 22px;
     color: #faf8f8;
 }
+
+@media screen and (max-width: 580px) {
+    .footer__text {
+        font-size: 14px;
+        line-height: 17px;
+    }
+  }

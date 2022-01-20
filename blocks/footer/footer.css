@@ -1,8 +1,27 @@
 .footer {
-    max-width: 318px;
-    display: flex;
-    align-self: flex-start;
+    max-width: 880px;
+    /* display: flex; */
+    /* align-self: flex-start; */
     padding: 67px 0 60px 0;
     margin: 0 auto;
     color: #faf8f8;
 }
+
+
+@media screen and (max-width: 580px) {
+    .footer {
+        max-width: 282px;
+        /* height: 50px;
+        margin-top: 36px;
+      justify-items: center;
+      grid-template-columns: 189px 18px;
+      gap: 10px 14px;
+      margin: 0 auto; */
+    }
+  }
+
+  @media screen and (max-width: 900px) and (min-width: 580px) {
+    .footer{
+        max-width: 550px;
+    }
+  }

@@ -1,8 +1,21 @@
 .profile {
     max-width: 880px;
-    min-width: 320px;
+    min-width: 120px;
     margin: 0 auto;
     padding: 0;
     margin-top: 40px;
     display: flex;
 }
+
+@media screen and (max-width: 680px) {
+    .profile {
+        max-width: 282px;
+        flex-direction: column;
+      /* margin-top: 64px; */
+      justify-items: center;
+     flex-direction: column;
+      
+      /* grid-template-columns: repeat(1, auto); */
+      /* row-gap: 12px; */
+    }
+  }

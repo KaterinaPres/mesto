@@ -7,4 +7,29 @@
     grid-template-columns: repeat(auto-fit, 282px);
     row-gap: 20px;
     column-gap: 17px;
+    justify-items: center;
 }
+
+@media screen and (max-width: 580px) {
+    .elements {
+        max-width: 282px;
+      /* margin-top: 64px; */
+      justify-items: center;
+      row-gap: 20px;
+      
+      /* grid-template-columns: repeat(1, auto); */
+      /* row-gap: 12px; */
+    }
+  }
+  
+  @media screen and (max-width: 879px) and (min-width: 581px) {
+    .elements {
+      /* margin-top: 88px; */
+      max-width: 581px;
+      justify-items: center;
+      row-gap: 20px;
+      column-gap: 17px;
+      /* grid-template-columns: repeat(2, auto); */
+      /* gap: 16px; */
+    }
+  }
