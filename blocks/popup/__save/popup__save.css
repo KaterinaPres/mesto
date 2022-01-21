@@ -8,4 +8,20 @@
     margin: 0 auto;
     margin-bottom: 37px;
     padding: 0;
+    color: #fff;
+    align-self: center;
+}
+
+.popup__save:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 680px) {
+    .popup__save-button {
+        min-width: 238px;
+        height: 46px;
+        margin: 15px 22px 25px;
+    }
 }
