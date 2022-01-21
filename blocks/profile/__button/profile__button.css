@@ -18,3 +18,8 @@
     align-self: flex-end;
   }
 }
+
+.profile__button:hover{
+  opacity: 0.6;
+  cursor: pointer;
+}

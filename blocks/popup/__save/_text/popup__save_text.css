@@ -1,0 +1,12 @@
+.popup__save_text {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    align-self: center;
+    color: #FFFFFF;
+    margin: 0 auto;
+    padding: 0;
+}

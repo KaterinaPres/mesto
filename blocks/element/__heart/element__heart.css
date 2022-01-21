@@ -3,4 +3,13 @@
     height: 19px;
     margin: 0 0 0 auto;
     padding: 0;
-} 
+}
+
+.element__heart:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.element__heart:active {
+    background-image: url(../../../images/Union.svg);
+}
