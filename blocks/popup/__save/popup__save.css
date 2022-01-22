@@ -6,8 +6,8 @@
     background: #000000;
     border-radius: 2px;
     margin: 0 auto;
+    margin-top: 48px;
     margin-bottom: 37px;
-    padding: 0;
     color: #fff;
     align-self: center;
 }
@@ -19,9 +19,9 @@
 }
 
 @media screen and (max-width: 680px) {
-    .popup__save-button {
-        min-width: 238px;
+    .popup__save {
+        width: 238px;
         height: 46px;
-        margin: 15px 22px 25px;
+        margin: 45px 22px 25px;
     }
 }

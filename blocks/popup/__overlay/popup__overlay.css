@@ -1,5 +1,12 @@
-.popup__overlay{
+.popup__overlay {
     min-width: 100%;
     display: flex;
     justify-content: center;
+    top: 195px;
+}
+
+@media screen and (max-width: 680px) {
+    .popup__overlay {
+        top: 148px;
+    }
 }
