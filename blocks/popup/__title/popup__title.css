@@ -2,7 +2,6 @@
     max-width: 330px;
     margin: 34px 64px 24px 36px;
     padding: 0;
-    font-family: Inter;
     font-style: normal;
     font-weight: 900;
     font-size: 24px;
@@ -13,7 +12,6 @@
 @media screen and (max-width: 680px) {
     .popup__title {
         min-width: 238px;
-        height: 22px;
         margin: 25px 22px 45px 22px;
         font-size: 18px;
         line-height: 22px;

@@ -16,11 +16,11 @@ let saveButton = document.querySelector('.popup__save')
 function openPopup() {
     namePersonag.value = profileNewName.innerHTML
     professia.value = profileNewProf.innerHTML
-    popup.classList.add('popup__opened')
+    popup.classList.add('popup_opened')
 }
 
 function closePopup() {
-    popup.classList.remove('popup__opened')
+    popup.classList.remove('popup_opened')
 }
 
 function savePopup() {
