@@ -6,12 +6,11 @@ let profileCloseButton = document.querySelector('.popup__close');
 profileOpenPopupButton.addEventListener('click', openPopup)
 profileCloseButton.addEventListener('click', closePopup)
 
-let formElement = document.querySelector('.popup__container')
+let formElement = document.querySelector('form[name="popup-edit"]')
 let namePersonag = document.getElementById('namePersonag')
 let professia = document.getElementById('professia')
 let profileNewName = document.querySelector('.profile__title')
 let profileNewProf = document.querySelector('.profile__subtitle')
-let saveButton = document.querySelector('.popup__save')
 
 function openPopup() {
     namePersonag.value = profileNewName.innerHTML
@@ -23,9 +22,10 @@ function closePopup() {
     popup.classList.remove('popup_opened')
 }
 
-function savePopup() {
+function savePopup(evt) {
+    evt.preventDefault()
     profileNewName.innerHTML = namePersonag.value
     profileNewProf.innerHTML = professia.value
     closePopup()
 }
-saveButton.addEventListener('click', savePopup)
+formElement.addEventListener('submit', savePopup)

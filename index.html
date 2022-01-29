@@ -30,43 +30,49 @@
         <div class="element">
           <img class="element__image" src="images/kirill-pershin-1088404-unsplash.jpg" alt="Старинная церковь">
           <div class="element__container">
-            <p class="element__text">Карачаево-Черкесск</p>
-            <img src="images/heart.svg" class="element__heart" alt="иконка сердечка">
+            <h3 class="element__text">Карачаево-Черкесск</h3>
+            <button type="button" class="element__heart">
+            </button>
           </div>
         </div>
         <div class="element">
           <img class="element__image" src="images/kirill-pershin-1088404-unsplash.jpg" alt="Старинная церковь">
           <div class="element__container">
-            <p class="element__text">Карачаевск</p>
-            <img src="images/heart.svg" class="element__heart" alt="иконка сердечка">
+            <h3 class="element__text">Карачаевск</h3>
+            <button type="button" class="element__heart">
+            </button>
           </div>
         </div>
         <div class="element">
           <img class="element__image" src="images/kirill-pershin-1404681-unsplash.png" alt="Горы Домбай">
           <div class="element__container">
-            <p class="element__text">Эльбрус</p>
-            <img src="images/heart.svg" class="element__heart" alt="иконка сердечка">
+            <h3 class="element__text">Эльбрус</h3>
+            <button type="button" class="element__heart">
+            </button>
           </div>
         </div>
         <div class="element">
           <img class="element__image" src="images/kirill-pershin-1404681-unsplash.png" alt="Горы Домбай">
           <div class="element__container">
-            <p class="element__text">Эльбрус</p>
-            <img src="images/heart.svg" class="element__heart" alt="иконка сердечка">
+            <h3 class="element__text">Эльбрус</h3>
+            <button type="button" class="element__heart">
+            </button>
           </div>
         </div>
         <div class="element">
           <img class="element__image" src="images/kirill-pershin-1556355-unsplash.jpg" alt="Гора Эльбрус в тумане">
           <div class="element__container">
-            <p class="element__text">Домбай</p>
-            <img src="images/heart.svg" class="element__heart" alt="иконка сердечка">
+            <h3 class="element__text">Домбай</h3>
+            <button type="button" class="element__heart">
+            </button>
           </div>
         </div>
         <div class="element">
           <img class="element__image" src="images/kirill-pershin-1556355-unsplash.jpg" alt="Гора Эльбрус в тумане">
           <div class="element__container">
-            <p class="element__text">Домбай</p>
-            <img src="images/heart.svg" class="element__heart" alt="иконка сердечка">
+            <h3 class="element__text">Домбай</h3>
+            <button type="button" class="element__heart">
+            </button>
           </div>
         </div>
       </section>
@@ -75,18 +81,14 @@
       <p class="footer__text">&#169; 2022 Mesto Russia</p>
     </footer>
     <div class="popup">
-      <div class="popup__overlay">
-        <div class="popup__container">
-          <button type="button" class="popup__close">
-          </button>
-          <h3 class="popup__title">Редактировать профиль</h3>
-          <input class="popup__item" type="text" id="namePersonag" value="" placeholder="Жак-Ив Кусто" />
-          <input class="popup__item" type="text" id="professia" value="" placeholder="Исследователь океана" />
-          <button type="submit" class="popup__save">
-            <img class="popup__save-text" src="images/Save.png" alt="кнопка сохранения формы">
-          </button>
-        </div>
-      </div>
+      <form name="popup-edit" class="popup__container">
+        <button type="button" class="popup__close">
+        </button>
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <input class="popup__item" type="text" name="name" id="namePersonag" value="" placeholder="Жак-Ив Кусто" />
+        <input class="popup__item" type="text" name="job" id="professia" value="" placeholder="Исследователь океана" />
+        <button type="submit" class="popup__save">Сохранить</button>
+      </form>
     </div>
     <script src="./scripts/index.js"></script>
   </div>

@@ -7,9 +7,14 @@
     margin: 0 auto;
     margin-top: 48px;
     margin-bottom: 37px;
+    font-family: 'Inter', Arial, Helvetica, sans-serif;
     color: #fff;
-    align-self: center;
-    border: none;
+    text-rendering: auto;
+    border-style: none;
+    padding-top: 16px;
+    padding-bottom: 18px;
+    padding-left: 5px;
+    letter-spacing: 1px;
 }
 
 .popup__save:hover {
@@ -22,5 +27,10 @@
     .popup__save {
         width: 238px;
         margin: 45px 22px 25px;
+        padding-bottom: 14px;
+        font-size: 14px;
+        line-height: 17px;
+        padding-top: 14px;
+        padding-left: 20px;
     }
 }
