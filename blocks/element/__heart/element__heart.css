@@ -1,6 +1,7 @@
 .element__heart {
     background-image: url(../../../images/heart.svg);
     background-color: rgba(255, 255, 255, 0);
+    background-size: 22px 19px;
     border-style: none;
     width: 22px;
     height: 19px;
@@ -16,5 +17,6 @@
 
 .element__heart:active {
     background-image: url(../../../images/Union.svg);
+    opacity: 1;
     transition: linear 0.3s;
 }

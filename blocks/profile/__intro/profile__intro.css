@@ -14,9 +14,11 @@
 @media screen and (max-width: 680px) {
   .profile__intro {
     max-width: 282px;
+    width: 88%;
     justify-items: center;
-    grid-template-columns: 189px 18px;
-    gap: 10px 14px;
+    grid-template-columns: 1fr 18px;
+    grid-template-rows: 26px 14px;
+    gap: 14px 9px;
     margin: 0 auto;
   }
 }
