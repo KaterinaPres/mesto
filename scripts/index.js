@@ -37,7 +37,6 @@ let ImageOpenPopupButton;
 let ImageCloseButton;
 let formElement = document.querySelector('form[name="popup-edit"]');
 let formElement1 = document.querySelector('form[name="popup-add"]');
-let formElement2 = document.querySelector('figure[name="popup-image"]');
 let namePersonag = document.getElementById('namePersonag');
 let professia = document.getElementById('professia');
 let profileNewName = document.querySelector('.profile__title');
@@ -88,7 +87,6 @@ function handleActive(event) {
 //функция удаления карточки
 function handleDelete(event) {
     event.target.closest('.element').remove();
-    resetForm();
 }
 
 //функция срабатывания кнопки "Создать" в popup добавления карточки
