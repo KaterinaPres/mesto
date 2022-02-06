@@ -14,9 +14,3 @@
     cursor: pointer;
     transition: linear 0.3s;
 }
-
-.element__heart:active {
-    background-image: url(../../../images/Union.svg);
-    opacity: 1;
-    transition: linear 0.3s;
-}

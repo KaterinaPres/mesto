@@ -32,7 +32,7 @@
     <footer class="footer">
       <p class="footer__text">&#169; 2022 Mesto Russia</p>
     </footer>
-     <!-- popup редактирования профиля -->
+    <!-- popup редактирования профиля -->
     <div class="popup popup__edit">
       <form name="popup-edit" class="popup__container">
         <button type="button" class="popup__close">
@@ -50,25 +50,33 @@
         </button>
         <h3 class="popup__title">Новое место</h3>
         <input class="popup__item" type="text" name="nameElement" id="nameElement" value="" placeholder="Название" />
-        <input class="popup__item" type="text" name="linkImage" id="linkImage" value="" placeholder="Ссылка на картинку" />
+        <input class="popup__item" type="text" name="linkImage" id="linkImage" value=""
+          placeholder="Ссылка на картинку" />
         <button type="submit" class="popup__save">Создать</button>
       </form>
     </div>
-     <!-- popup открытия элемента -->
-     <div class="popup">
-     </div>
+    <!-- popup открытия элемента -->
+    <div class="popup popup__image">
+      <figure name="popup-image" class="popup__images">
+        <button type="button" class="popup__close">
+        </button>
+        <img class="popup__pictire" src="" alt="">
+        <figcaption class="popup__text"></figcaption>
+      </figure>
+    </div>
     <script src="./scripts/index.js"></script>
   </div>
+  <!-- темплейт карточки -->
   <template id="template">
     <li class="element">
-      <img class="element__image" src="" alt="">
       <button type="button" class="element__delete" aria-label="удалить"></button>
-        <div class="element__container">
-          <h3 class="element__text">
-          </h3>
-          <button type="button" class="element__heart">
-          </button>
-        </div>
+      <img class="element__image" src="" alt="">
+      <div class="element__container">
+        <h3 class="element__text">
+        </h3>
+        <button type="button" class="element__heart">
+        </button>
+      </div>
     </li>
   </template>
 </body>
