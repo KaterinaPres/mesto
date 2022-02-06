@@ -25,14 +25,14 @@ const initialCards = [
     }
 ];
 let profileOpenPopupButton = document.querySelector('.profile__button');
-let popupAdd = document.querySelector('.popup__add');
-let popupEdit = document.querySelector('.popup__edit');
-let popupImage = document.querySelector('.popup__image');
-let profileCloseButton = document.querySelector('.popup__edit .popup__close');
+let popupAdd = document.querySelector('.popup-add');
+let popupEdit = document.querySelector('.popup-edit');
+let popupImage = document.querySelector('.popup-image');
+let profileCloseButton = document.querySelector('.popup-edit .popup__close');
 let template;
 let list = document.querySelector('.elements');
 let AddOpenPopupButton = document.querySelector('.profile__add-button');
-let AddCloseButton = document.querySelector('.popup__add .popup__close');
+let AddCloseButton = document.querySelector('.popup-add .popup__close');
 let ImageOpenPopupButton;
 let ImageCloseButton;
 let formElement = document.querySelector('form[name="popup-edit"]');
@@ -58,7 +58,7 @@ function render() {
 function init() {
     template = document.querySelector('#template').content;
     render();
-    ImageCloseButton = document.querySelector('.popup__image .popup__close');
+    ImageCloseButton = document.querySelector('.popup-image .popup__close');
     ImageCloseButton.addEventListener('click', closePopup);
 }
 
