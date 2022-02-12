@@ -1,5 +1,7 @@
 .elements {
   max-width: 880px;
+  min-width: 282px;
+  min-height: 361px;
   margin: 0 auto;
   margin-top: 45px;
   padding: 0;
