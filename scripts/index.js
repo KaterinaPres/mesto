@@ -121,9 +121,8 @@ function openPopupImage(evt) {
     const item = evt.target;
     picture.setAttribute('src', item.getAttribute('src'));
     picture.setAttribute('alt', item.getAttribute('alt'));
-    text.innerText = item.parentNode.querySelector('.element__text').innerText;
+    text.innerText = item.alt
     openPopup(popupImage);
-    imageCloseButton.addEventListener('click', closePopupImage);
 }
 
 //закрытие любого popup
@@ -151,6 +150,7 @@ function savePopupEdit(evt) {
     closePopupEdit();
 }
 
+imageCloseButton.addEventListener('click', closePopupImage);
 formElementPopupEdit.addEventListener('submit', savePopupEdit);
 formElementPopupAdd.addEventListener('submit', handleCardFormSubmit);
 document.addEventListener("DOMContentLoaded", render);
