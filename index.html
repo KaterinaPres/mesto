@@ -38,9 +38,9 @@
         <button type="button" class="popup__close">
         </button>
         <h3 class="popup__title">Редактировать профиль</h3>
-        <input class="popup__item" type="text" name="name" id="userName" value="" placeholder="Жак-Ив Кусто" />
-        <input class="popup__item" type="text" name="job" id="job" value="" placeholder="Исследователь океана" />
-        <button type="submit" class="popup__save">Сохранить</button>
+        <input class="popup__item form__input" type="text" name="name" id="userName" value="" placeholder="Жак-Ив Кусто" required minlength="2" maxlength="40"/>
+        <input class="popup__item form__input" type="text" name="job" id="job" value="" placeholder="Исследователь океана" required minlength="2" maxlength="200"/>
+        <button type="submit" class="popup__save form__submit">Сохранить</button>
       </form>
     </section>
     <!-- popup добавления элемента -->
@@ -49,10 +49,10 @@
         <button type="button" class="popup__close">
         </button>
         <h3 class="popup__title">Новое место</h3>
-        <input class="popup__item" type="text" name="nameElement" id="nameElement" value="" placeholder="Название" />
-        <input class="popup__item" type="text" name="linkImage" id="linkImage" value=""
-          placeholder="Ссылка на картинку" />
-        <button type="submit" class="popup__save">Создать</button>
+        <input class="popup__item form__input" type="text" name="nameElement" id="nameElement" value="" placeholder="Название" required minlength="2" maxlength="30"/>
+        <input class="popup__item form__input" type="url" name="linkImage" id="linkImage" value=""
+          placeholder="Ссылка на картинку" required/>
+        <button type="submit" class="popup__save form__submit">Создать</button>
       </form>
     </section>
     <!-- popup открытия элемента -->
@@ -79,6 +79,7 @@
     </template>
   </div>
   <script src="./scripts/index.js"></script>
+  <script src="./scripts/validate.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,7 @@
+.form__input:invalid {
+    border: 1px solid red; /* красная рамка для некорректных данных */
+  } 
+  
+  .form__input:valid {
+    border: 1px solid green; /* зелёная - для корректных */
+  } 
