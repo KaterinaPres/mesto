@@ -34,24 +34,39 @@
     </footer>
     <!-- popup редактирования профиля -->
     <section class="popup popup-edit">
-      <form name="popup-edit" class="popup__container">
+      <form method="get" name="popup-edit" class="popup__container" novalidate>
         <button type="button" class="popup__close">
         </button>
         <h3 class="popup__title">Редактировать профиль</h3>
-        <input class="popup__item form__input" type="text" name="name" id="userName" value="" placeholder="Жак-Ив Кусто" required minlength="2" maxlength="40"/>
-        <input class="popup__item form__input" type="text" name="job" id="job" value="" placeholder="Исследователь океана" required minlength="2" maxlength="200"/>
+        <label class="popup__label">
+          <input class="popup__item form__input" type="text" name="name" id="userName" value=""
+            placeholder="Жак-Ив Кусто" minlength="2" maxlength="40" required />
+          <span class="popup__message userName-error"></span>
+        </label>
+        <label class="popup__label">
+          <input class="popup__item form__input" type="text" name="job" id="job" value=""
+            placeholder="Исследователь океана" minlength="2" maxlength="200" required />
+          <span class="popup__message job-error"></span>
+        </label>
         <button type="submit" class="popup__save form__submit">Сохранить</button>
       </form>
     </section>
     <!-- popup добавления элемента -->
     <section class="popup popup-add">
-      <form name="popup-add" class="popup__container">
+      <form method="get" name="popup-add" class="popup__container" novalidate>
         <button type="button" class="popup__close">
         </button>
         <h3 class="popup__title">Новое место</h3>
-        <input class="popup__item form__input" type="text" name="nameElement" id="nameElement" value="" placeholder="Название" required minlength="2" maxlength="30"/>
-        <input class="popup__item form__input" type="url" name="linkImage" id="linkImage" value=""
-          placeholder="Ссылка на картинку" required/>
+        <label class="popup__label">
+          <input class="popup__item form__input" type="text" name="nameElement" id="nameElement" value=""
+            placeholder="Название" minlength="2" maxlength="30" required />
+          <span class="popup__message nameElement-error"></span>
+        </label>
+        <label class="popup__label">
+          <input class="popup__item form__input" type="url" name="linkImage" id="linkImage" value=""
+            placeholder="Ссылка на картинку" required />
+          <span class="popup__message linkImage-error"></span>
+        </label>
         <button type="submit" class="popup__save form__submit">Создать</button>
       </form>
     </section>
@@ -78,8 +93,8 @@
       </li>
     </template>
   </div>
-  <script src="./scripts/index.js"></script>
   <script src="./scripts/validate.js"></script>
+  <script src="./scripts/index.js"></script>
 </body>
 
 </html>
