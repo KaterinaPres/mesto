@@ -1,7 +1,4 @@
-// const popupAdd = document.querySelector('.popup-add');
 const addButton =  document.querySelector(".popup__save");
-// button.setAttribute("disabled", "");
-// button.classList.add("popup__save_notactive");
 
 //добавление класса с ошибкой
 function showInputError(
@@ -87,11 +84,6 @@ addButton.classList.remove('popup__save_notactive');
 addButton.classList.add('popup__save_notactive');
   }
 }
-
-// form.addEventListener('input', function (evt) {
-//   const isValid = artist.value.length > 0 && title.value.length > 0;
- 
-// });
 
 // включение валидации вызовом enableValidation
 // все настройки передаются при вызове
