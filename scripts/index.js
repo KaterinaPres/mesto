@@ -29,7 +29,7 @@ const popupAdd = document.querySelector('.popup-add');
 const popupEdit = document.querySelector('.popup-edit');
 const popupImage = document.querySelector('.popup-image');
 const profileCloseButton = document.querySelector('.popup-edit .popup__close');
-const template = document.querySelector('#template').content;;
+const template = document.querySelector('#template').content;
 const list = document.querySelector('.elements');
 const addOpenPopupButton = document.querySelector('.profile__add-button');
 const addCloseButton = document.querySelector('.popup-add .popup__close');
@@ -97,9 +97,9 @@ function handleCardFormSubmit(evt) {
     renderItem(card);
     closePopupAdd();
     evt.target.reset();
-    const button = popupAdd.querySelector(".popup__save");
-    button.setAttribute("disabled", "");
-    button.classList.add("popup__save_notactive");
+    // const button = popupAdd.querySelector(".popup__save");
+    // button.setAttribute("disabled", "");
+    // button.classList.add("popup__save_notactive");
 }
 
 //открытие popup
@@ -126,7 +126,7 @@ function openPopupImage(evt) {
     const item = evt.target;
     picture.setAttribute('src', item.getAttribute('src'));
     picture.setAttribute('alt', item.getAttribute('alt'));
-    text.innerText = item.alt
+    text.textContent = item.alt
     openPopup(popupImage);
 }
 
