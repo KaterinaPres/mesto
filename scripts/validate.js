@@ -1,5 +1,3 @@
-const addButton =  document.querySelector(".popup__save");
-
 //добавление класса с ошибкой
 function showInputError(
   { errorClass, inputErrorClass },
@@ -20,6 +18,7 @@ function hideInputError({ errorClass, inputErrorClass }, form, input) {
   errorElement.classList.remove(inputErrorClass);
   errorElement.textContent = "";
 }
+
 // Функция, которая проверяет валидность поля
 function checkInputValidity(rest, form, input) {
   if (!input.validity.valid) {
@@ -51,7 +50,6 @@ function enableValidation({ formSelector, ...rest }) {
   formList.forEach((form) => {
     form.addEventListener("submit", function (evt) {
       evt.preventDefault();
-      setSubmitButtonState(isValid);
     });
     setEventListeners(rest, form);
   });
@@ -75,23 +73,20 @@ function toggleButtonState({ inactiveButtonClass }, inputList, button) {
   }
 }
 
-function setSubmitButtonState(isFormValid) {
-  if (isFormValid) {
-    addButton.removeAttribute('disabled');
-addButton.classList.remove('popup__save_notactive'); 
-  } else{
-    addButton.setAttribute('disabled', true);
-addButton.classList.add('popup__save_notactive');
-  }
+function setSubmitButtonState({ inactiveButtonClass }, button) {
+  button.setAttribute('disabled', true);
+  button.classList.add(inactiveButtonClass);
 }
 
-// включение валидации вызовом enableValidation
-// все настройки передаются при вызове
-enableValidation({
+const validationParameters = {
   formSelector: '.popup__container',
   inputSelector: '.popup__item',
   submitButtonSelector: '.popup__save',
   inactiveButtonClass: 'popup__save_notactive',
   inputErrorClass: 'popup__message_active',
   errorClass: 'popup__item_error'
-});
+};
+
+// включение валидации вызовом enableValidation
+// все настройки передаются при вызове
+enableValidation(validationParameters);

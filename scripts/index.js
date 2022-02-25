@@ -46,8 +46,8 @@ const nameElement = document.getElementById('nameElement');
 const linkImage = document.getElementById('linkImage');
 const picture = popupImage.querySelector('.popup__pictire');
 const text = popupImage.querySelector('.popup__text');
-
-
+const addButton = popupAdd.querySelector(".popup__save");
+const editButton = popupEdit.querySelector(".popup__save");
 
 profileOpenPopupButton.addEventListener('click', openPopupProfile);
 addOpenPopupButton.addEventListener('click', openPopupAdd);
@@ -97,9 +97,6 @@ function handleCardFormSubmit(evt) {
     renderItem(card);
     closePopupAdd();
     evt.target.reset();
-    // const button = popupAdd.querySelector(".popup__save");
-    // button.setAttribute("disabled", "");
-    // button.classList.add("popup__save_notactive");
 }
 
 //открытие popup
@@ -113,11 +110,13 @@ function openPopup(popup) {
 function openPopupProfile() {
     userName.value = profileNewName.textContent;
     job.value = profileNewProf.textContent;
+    setSubmitButtonState(validationParameters, editButton);
     openPopup(popupEdit);
 }
 
 //открытие popup добавления карточки
 function openPopupAdd() {
+    setSubmitButtonState(validationParameters, addButton);
     openPopup(popupAdd);
 }
 
@@ -129,8 +128,6 @@ function openPopupImage(evt) {
     text.textContent = item.alt
     openPopup(popupImage);
 }
-
-
 
 //закрытие любого popup
 function closePopup(popup) {
