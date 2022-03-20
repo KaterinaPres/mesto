@@ -1,3 +1,6 @@
+import { Card } from "./Card.js";
+import { FormValidator } from './FormValidator.js';
+
 const initialCards = [
     {
         name: 'Архыз',
@@ -29,7 +32,6 @@ const popupAdd = document.querySelector('.popup-add');
 const popupEdit = document.querySelector('.popup-edit');
 const popupImage = document.querySelector('.popup-image');
 const profileCloseButton = document.querySelector('.popup-edit .popup__close');
-const template = document.querySelector('#template').content;
 const list = document.querySelector('.elements');
 const addOpenPopupButton = document.querySelector('.profile__add-button');
 const addCloseButton = document.querySelector('.popup-add .popup__close');
@@ -40,8 +42,6 @@ const userName = document.getElementById('userName');
 const job = document.getElementById('job');
 const profileNewName = document.querySelector('.profile__title');
 const profileNewProf = document.querySelector('.profile__subtitle');
-const addNewName = document.querySelector('.element__text');
-const addNewImage = document.querySelector('.element__image');
 const nameElement = document.getElementById('nameElement');
 const linkImage = document.getElementById('linkImage');
 const picture = popupImage.querySelector('.popup__pictire');
@@ -63,31 +63,10 @@ function renderItem(element) {
 }
 
 //работа с карточками
-function createCard(element) {
-    const newItem = template.cloneNode(true);
-    newItem.querySelector('.element__text').innerText = element.name;
-    const image = newItem.querySelector('.element__image');
-    image.setAttribute('src', element.link);
-    image.setAttribute('alt', element.name);
-    addListeners(newItem);
-    return newItem;
-}
-
-//функция срабатывания клика при удалении и лайке
-function addListeners(el) {
-    el.querySelector('.element__delete').addEventListener('click', handleDelete);
-    el.querySelector('.element__heart').addEventListener('click', toggleLikes);
-    el.querySelector('.element__image').addEventListener('click', openPopupImage);
-}
-
-//функция выделения лайка
-function toggleLikes(event) {
-    event.target.classList.toggle('element__heart_active');
-}
-
-//функция удаления карточки
-function handleDelete(event) {
-    event.target.closest('.element').remove();
+function createCard(item) {
+    const card = new Card(item, ".elements__template", openPopupImage);
+    const cardElement = card.createCard();
+    return cardElement;
 }
 
 //функция срабатывания кнопки "Создать" в popup добавления карточки
@@ -110,22 +89,21 @@ function openPopup(popup) {
 function openPopupProfile() {
     userName.value = profileNewName.textContent;
     job.value = profileNewProf.textContent;
-    setSubmitButtonState(validationParameters, editButton);
+    formValidators['popup-edit'].setSubmitButtonState(editButton);
     openPopup(popupEdit);
 }
 
 //открытие popup добавления карточки
 function openPopupAdd() {
-    setSubmitButtonState(validationParameters, addButton);
+    formValidators['popup-add'].setSubmitButtonState(addButton);
     openPopup(popupAdd);
 }
 
 //открытие popup картинки
-function openPopupImage(evt) {
-    const item = evt.target;
-    picture.setAttribute('src', item.getAttribute('src'));
-    picture.setAttribute('alt', item.getAttribute('alt'));
-    text.textContent = item.alt
+const openPopupImage = (name, link) => {
+    picture.src = link;
+    picture.alt = name;
+    text.textContent = name;
     openPopup(popupImage);
 }
 
@@ -161,6 +139,7 @@ function closePopupEsc(event) {
         closePopup(document.querySelector(".popup_opened"));
     }
 }
+
 //сохранение popup редактирования профиля
 function savePopupEdit(evt) {
     evt.preventDefault();
@@ -175,3 +154,29 @@ formElementPopupAdd.addEventListener('submit', handleCardFormSubmit);
 document.addEventListener("DOMContentLoaded", render);
 profileCloseButton.addEventListener('click', closePopupEdit);
 addCloseButton.addEventListener('click', closePopupAdd);
+
+const validationParameters = {
+    formSelector: '.popup__container',
+    inputSelector: '.popup__item',
+    submitButtonSelector: '.popup__save',
+    inactiveButtonClass: 'popup__save_notactive',
+    inputErrorClass: 'popup__message_active',
+    errorClass: 'popup__item_error'
+};
+
+const formValidators = {};
+
+//добавление обработчиков всем формам
+const enableValidation = (config) => {
+    const formList = Array.from(document.querySelectorAll(config.formSelector));
+    formList.forEach((formElement) => {
+        const validator = new FormValidator(config, formElement);
+        const formName = formElement.getAttribute("name");
+        formValidators[formName] = validator;
+        validator.enableValidation();
+    });
+}
+
+// включение валидации вызовом enableValidation
+// все настройки передаются при вызове
+enableValidation(validationParameters);
