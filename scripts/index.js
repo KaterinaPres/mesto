@@ -64,7 +64,7 @@ function renderItem(element) {
 
 //работа с карточками
 function createCard(item) {
-    const card = new Card(item, ".elements__template", openPopupImage);
+    const card = new Card(item, "#template", openPopupImage);
     const cardElement = card.createCard();
     return cardElement;
 }
@@ -90,12 +90,14 @@ function openPopupProfile() {
     userName.value = profileNewName.textContent;
     job.value = profileNewProf.textContent;
     formValidators['popup-edit'].setSubmitButtonState(editButton);
+    formValidators['popup-edit'].resetValidation();
     openPopup(popupEdit);
 }
 
 //открытие popup добавления карточки
 function openPopupAdd() {
     formValidators['popup-add'].setSubmitButtonState(addButton);
+    formValidators['popup-add'].resetValidation();
     openPopup(popupAdd);
 }
 

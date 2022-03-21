@@ -1,6 +1,6 @@
 export class Card {
     constructor(item, template, cardClick) {
-        this._template = document.querySelector('#template').content;
+        this._template = document.querySelector(template).content;
         this._name = item.name;
         this._link = item.link;
         this._cardClick = cardClick;
