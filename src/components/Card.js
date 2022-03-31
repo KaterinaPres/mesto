@@ -1,4 +1,4 @@
-export class Card {
+export default class Card {
     constructor(item, template, cardClick) {
         this._template = document.querySelector(template).content;
         this._name = item.name;
@@ -36,4 +36,11 @@ export class Card {
         this._addListeners();
         return this._newItem;
     }
+    // handleCardClick = (evt) =>{
+    //     evt.preventDefault();
+    //     this.card = { name: nameElement.value, link: linkImage.value };
+    //     renderItem(card);
+    //     closePopupAdd();
+    //     evt.target.reset();
+    // }
 }
