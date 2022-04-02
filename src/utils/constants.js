@@ -1,3 +1,4 @@
+
 export const initialCards = [
     {
         name: 'Архыз',
@@ -25,26 +26,20 @@ export const initialCards = [
     }
 ];
 export const profileOpenPopupButton = document.querySelector('.profile__button');
-// export const popupAdd = document.querySelector('.popup-add');
-// export const popupEdit = document.querySelector('.popup-edit');
-// const popupImage = document.querySelector('.popup-image');
-export const profileCloseButton = document.querySelector('.popup-edit .popup__close');
-export const list = document.querySelector('.elements');
+export const popupAddSelector = '.popup-add';
+export const popupEditSelector = '.popup-edit';
+export const popupImageSelector = '.popup-image';
+export const listSelector = '.elements';
 export const addOpenPopupButton = document.querySelector('.profile__add-button');
-export const addCloseButton = document.querySelector('.popup-add .popup__close');
-export const imageCloseButton = document.querySelector('.popup-image .popup__close');
-// const formElementPopupEdit = document.querySelector('form[name="popup-edit"]');
-// const formElementPopupAdd = document.querySelector('form[name="popup-add"]');
-export const userName = document.getElementById('userName');
-export const job = document.getElementById('job');
+export const formElementPopupEdit = document.querySelector('form[name="popup-edit"]');
+export const userName = document.querySelector('#userName');
+export const jobInput = document.querySelector('#job');
 export const profileNewName = document.querySelector('.profile__title');
 export const profileNewProf = document.querySelector('.profile__subtitle');
 export const nameElement = document.getElementById('nameElement');
 export const linkImage = document.getElementById('linkImage');
-export const picture = popupImage.querySelector('.popup__pictire');
-// const te+xt = popupImage.querySelector('.popup__text');
-export const addButton = popupAdd.querySelector(".popup__save");
-export const editButton = popupEdit.querySelector(".popup__save");
+export const addButton = document.querySelector(popupAddSelector + " .popup__save");
+export const editButton = document.querySelector(popupEditSelector + " .popup__save");
 
 export const validationParameters = {
     formSelector: '.popup__container',

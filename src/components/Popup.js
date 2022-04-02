@@ -1,23 +1,22 @@
-export default class Section {
+export default class Popup {
     constructor(popupSelector) {
 
         this._popup = document.querySelector(popupSelector);
     }
     open() {
-        this.popup.classList.add('popup_opened');
-        this.document.addEventListener("keydown", closePopupEsc);
-        this.popup.addEventListener("mousedown", closePopupOverley);
+        this._popup.classList.add('popup_opened');
+        document.addEventListener("keydown", this._handleEscClose);
     }
     close() {
-        this.popup.classList.remove('popup_opened');
-        this.document.removeEventListener("keydown", closePopupEsc);
-        this.popup.removeEventListener("mousedown", closePopupOverley);
+        this._popup.classList.remove('popup_opened');
+        document.removeEventListener("keydown", this._handleEscClose);
     }
     _handleEscClose = (event) => {
         if (event.key == "Escape") {
-            this.close;
+            this.close();
         }
     }
+
     setEventListeners() {
         this._popup.addEventListener("mousedown", (evt) => {
             if (evt.target.classList.contains("popup_opened")) {

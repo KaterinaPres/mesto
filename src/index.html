@@ -4,18 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link rel="stylesheet" href="./pages/index.css"> -->
   <title>Место</title>
 </head>
 
 <body>
   <div class="pages">
     <header class="header">
-      <img src="images/logo.svg" alt="Логотип сайта" class="header__logo">
+      <img src="./src/images/logo.svg" alt="Логотип сайта" class="header__logo">
     </header>
     <main class="content">
       <section class="profile">
-        <img src="images/image.jpg" alt="На фото изображён Жак-Ив-Кусто, седой мужчина в очках и красной шапочке"
+        <img src="./src/images/image.jpg" alt="На фото изображён Жак-Ив-Кусто, седой мужчина в очках и красной шапочке"
           class="profile__image">
         <div class="profile__intro">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
@@ -80,7 +79,7 @@
       </figure>
     </section>
     <!-- темплейт карточки -->
-    <template id="template">
+    <template id="template" class="elements__template">
       <li class="element">
         <button type="button" class="element__delete" aria-label="удалить"></button>
         <img class="element__image" src="." alt="">
@@ -93,7 +92,6 @@
       </li>
     </template>
   </div>
-  <!-- <script type="module" src="../dist/main.js" defer></script> -->
 </body>
 
 </html>
