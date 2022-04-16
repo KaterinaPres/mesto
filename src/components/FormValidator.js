@@ -39,12 +39,11 @@ export default class FormValidator {
 
   //добавление обработчиков всем полям формы
   _setEventListeners() {
-    const validator = this;
-    validator._toggleButtonState();
-    validator._inputList.forEach((input) => {
-      input.addEventListener("input", function () {
-        validator._checkInputValidity(input);
-        validator._toggleButtonState();
+    this._toggleButtonState();
+    this._inputList.forEach((input) => {
+      input.addEventListener("input", () => {
+        this._checkInputValidity(input);
+        this._toggleButtonState();
       });
     });
   }
@@ -66,11 +65,6 @@ export default class FormValidator {
       this._button.removeAttribute("disabled");
       this._button.classList.remove(inactiveButtonClass);
     }
-  }
-
-  setSubmitButtonState(button) {
-    button.setAttribute('disabled', true);
-    button.classList.add(this._settings.inactiveButtonClass);
   }
 
   enableValidation() {

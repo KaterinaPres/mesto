@@ -19,11 +19,11 @@ import { api } from "../components/Api.js";
 let userId;
 
 Promise.all([api.getProfile(), api.getInitialCards()])
-    .then(([userData, card]) => {
+    .then(([userData, cards]) => {
         userInfo.setUserInfo(userData.name, userData.about);
         userInfo.addUserAvatar(userData.avatar);
         userId = userData._id;
-        section.render(card);
+        section.render(cards);
     })
     .catch((err) => {
         console.log(err);
@@ -80,7 +80,6 @@ function openPopupProfile() {
 
 //открытие popup добавления карточки
 function openPopupAdd() {
-    formValidators['popup-add'].setSubmitButtonState(buttonAdd);
     formValidators['popup-add'].resetValidation();
     popupAdd.open();
 }
@@ -132,9 +131,9 @@ function createCard(item) {
 
 //функция срабатывания кнопки "Создать" в popup добавления карточки
 function handleCardFormSubmit(data) {
+    popupAdd.renderLoading(true);
     api.addNewCard(data.nameElement, data.linkImage)
         .then((res) => {
-            popupAdd.renderLoading(true);
             renderItem({ ...res, userId });
             popupAdd.close();
         })
