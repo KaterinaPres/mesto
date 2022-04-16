@@ -10,12 +10,15 @@
 <body>
   <div class="pages">
     <header class="header">
-      <img src="./src/images/logo.svg" alt="Логотип сайта" class="header__logo">
+      <img src="<%=require('./images/logo.svg')%>" alt="Логотип сайта" class="header__logo">
     </header>
     <main class="content">
       <section class="profile">
-        <img src="./src/images/image.jpg" alt="На фото изображён Жак-Ив-Кусто, седой мужчина в очках и красной шапочке"
-          class="profile__image">
+        <div class="profile__block-avatar">
+          <img class="profile__avatar" src="."
+            alt="Аватар, на котором есть изображение того, о ком идёт информация рядом" />
+          <div class="profile__image"></div>
+        </div>
         <div class="profile__intro">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
           <button type="button" class="profile__button">
@@ -43,9 +46,9 @@
           <span class="popup__message userName-error"></span>
         </label>
         <label class="popup__label">
-          <input class="popup__item" type="text" name="job" id="job" value="" placeholder="О себе" minlength="2"
+          <input class="popup__item" type="text" name="about" id="about" value="" placeholder="О себе" minlength="2"
             maxlength="200" required />
-          <span class="popup__message job-error"></span>
+          <span class="popup__message about-error"></span>
         </label>
         <button type="submit" class="popup__save">Сохранить</button>
       </form>
@@ -78,16 +81,40 @@
         <figcaption class="popup__text"></figcaption>
       </figure>
     </section>
+    <!-- popup удаления карточки -->
+    <section class="popup popup-delete">
+      <form method="get" name="popup-delete" class="popup__container popup__container_delete" novalidate>
+        <button type="button" class="popup__close">
+        </button>
+        <h3 class="popup__title popup__title_delete">Вы уверены?</h3>
+        <button type="submit" class="popup__save popup__save_delete">Да</button>
+      </form>
+    </section>
+    <!-- popup редактирования аватара -->
+    <section class="popup popup-avatar">
+      <form method="get" name="popup-avatar" class="popup__container popup__container_avatar" novalidate>
+        <button type="button" class="popup__close">
+        </button>
+        <h3 class="popup__title">Обновить аватар</h3>
+        <label class="popup__label">
+          <input class="popup__item" type="url" name="linkAvatar" id="linkAvatar" value=""
+            placeholder="Ссылка на фото аватара" required />
+          <span class="popup__message linkAvatar-error"></span>
+        </label>
+        <button type="submit" class="popup__save">Сохранить</button>
+      </form>
+    </section>
     <!-- темплейт карточки -->
     <template id="template" class="elements__template">
       <li class="element">
         <button type="button" class="element__delete" aria-label="удалить"></button>
         <img class="element__image" src="." alt="">
         <div class="element__container">
-          <h3 class="element__text">
-          </h3>
-          <button type="button" class="element__heart">
-          </button>
+          <h3 class="element__text"></h3>
+          <div class="element__like">
+            <button type="button" class="element__heart"></button>
+            <span class="element__like-number"></span>
+          </div>
         </div>
       </li>
     </template>
